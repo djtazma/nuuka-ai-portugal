@@ -5,8 +5,7 @@
   "scripts": {
     "build": "tailwindcss -i ./src/input.css -o ./dist/output.css",
     "dev": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
-    "start": "serve -s .",
-    "vercel-build": "npm run build"
+    "start": "serve -s ."
   },
   "devDependencies": {
     "@tailwindcss/line-clamp": "^0.4.4",
