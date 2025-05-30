@@ -5,7 +5,7 @@
   "scripts": {
     "build": "tailwindcss -i ./src/input.css -o ./dist/output.css",
     "dev": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
-    "start": "serve -s dist",
+    "start": "serve -s .",
     "vercel-build": "npm run build"
   },
   "devDependencies": {
@@ -15,11 +15,5 @@
     "postcss": "^8.4.35",
     "tailwindcss": "^3.4.1",
     "serve": "^14.2.0"
-  },
-  "vercel": {
-    "build": {
-      "command": "npm run vercel-build",
-      "outputDirectory": "dist"
-    }
   }
 }
