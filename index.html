@@ -401,6 +401,41 @@
             transform: translateX(4px);
         }
         
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Market Facts Grid */
+        .market-facts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .market-fact {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .market-fact:hover {
+            transform: translateY(-5px);
+        }
+
+        .market-fact h3 {
+            color: var(--apple-blue);
+            margin-bottom: 1rem;
+        }
+
+        .market-fact p {
+            margin: 0.5rem 0;
+            line-height: 1.6;
+        }
+
         /* Loading Animation */
         .loading {
             position: fixed;
@@ -415,12 +450,12 @@
             z-index: 9999;
             transition: opacity 0.5s, visibility 0.5s;
         }
-        
+
         .loading.hidden {
             opacity: 0;
             visibility: hidden;
         }
-        
+
         .loader {
             width: 50px;
             height: 50px;
@@ -429,12 +464,12 @@
             border-radius: 50%;
             animation: spin 1s linear infinite;
         }
-        
+
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
-        
+
         @media (max-width: 768px) {
             .panel {
                 padding: 6rem 1.5rem;
@@ -450,6 +485,10 @@
             
             p, li {
                 font-size: 1.1rem;
+            }
+
+            .market-facts {
+                grid-template-columns: 1fr;
             }
         }
         </style>
@@ -652,6 +691,28 @@
             <li>Targeted Digital Marketing: LinkedIn, Google Ads (Gemini), focus on "Profit from Savings."</li>
             <li>Emphasize Data Security & Compliance: Build trust (GDPR).</li>
         </ul>
+    </section>
+
+    <!-- Spain Market Analysis -->
+    <section class="panel">
+        <h2>Spain Market Analysis</h2>
+        <div class="market-facts">
+            <div class="market-fact">
+                <h3>Total Addressable Market (TAM)</h3>
+                <p>€306 Million in annual revenue potential for Nuuka AI</p>
+                <p>Represents HVAC savings across all relevant Spanish commercial/public buildings</p>
+            </div>
+            <div class="market-fact">
+                <h3>Serviceable Addressable Market (SAM)</h3>
+                <p>€61.2 Million in annual revenue potential</p>
+                <p>Focus on buildings with existing BMS</p>
+            </div>
+            <div class="market-fact">
+                <h3>Serviceable Obtainable Market (SOM)</h3>
+                <p>€612,000 in annual revenue target</p>
+                <p>Achievable market share within 3-5 years</p>
+            </div>
+        </div>
     </section>
 
     <!-- Panel 8: Conclusion -->
