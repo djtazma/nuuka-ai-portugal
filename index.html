@@ -306,23 +306,52 @@
         }
         
         .modal-content {
-            background: white;
-            border-radius: 12px;
-            width: 100%;
-            max-width: 800px;
-            max-height: 90vh;
+            background-color: white;
+            margin: 15% auto;
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 90%;
+            max-height: 90%;
             overflow-y: auto;
-            padding: 30px;
             position: relative;
-            transform: translateY(20px);
-            transition: transform 0.3s ease;
-            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.2);
+            transform: translateY(-50px);
+            opacity: 0;
+            transition: all 0.3s ease;
         }
-        
+
         .modal.visible .modal-content {
             transform: translateY(0);
+            opacity: 1;
         }
-        
+
+        .calc-section {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+        }
+
+        .calc-details {
+            margin-top: 1rem;
+        }
+
+        .calc-item {
+            margin: 1rem 0;
+            padding: 0.5rem;
+            border-left: 3px solid var(--apple-blue);
+        }
+
+        .calc-item strong {
+            color: var(--apple-blue);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .calc-item ul {
+            margin: 0.5rem 0;
+            padding-left: 1.5rem;
+        }
+
         .close-modal {
             position: absolute;
             top: 20px;
@@ -713,6 +742,7 @@
                 <p>Achievable market share within 3-5 years</p>
             </div>
         </div>
+        <button class="calc-btn" onclick="showModal('spainCalculationsModal')">See Calculations</button>
     </section>
 
     <!-- Panel 8: Conclusion -->
@@ -829,6 +859,106 @@
             }
         });
     </script>
+    <!-- Spain Calculations Modal -->
+    <div id="spainCalculationsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('spainCalculationsModal')">×</span>
+            <h2>Spain Market Calculations</h2>
+            
+            <div class="calc-section">
+                <h3>A. Total Addressable Market (TAM)</h3>
+                <p>The total annual revenue opportunity if every relevant building in Spain fully adopted Nuuka AI's optimization, irrespective of current BMS or willingness to invest.</p>
+                
+                <div class="calc-details">
+                    <div class="calc-item">
+                        <strong>Estimated Number of Relevant Buildings (TAM):</strong>
+                        <p>120,000 buildings</p>
+                    </div>
+                    <div class="calc-item">
+                        <strong>Average Annual Energy Consumption per building (Estimate):</strong>
+                        <p>Total Annual Energy Consumption: 2,500m² × 200kWh/m² = 500,000kWh</p>
+                    </div>
+                    <div class="calc-item">
+                        <strong>HVAC Energy Consumption per building:</strong>
+                        <p>500,000kWh × 34% = 170,000kWh</p>
+                    </div>
+                    <div class="calc-item">
+                        <strong>Annual HVAC Energy Cost per building:</strong>
+                        <p>170,000kWh × €0.20/kWh = €34,000</p>
+                    </div>
+                    <div class="calc-item">
+                        <strong>Potential Annual Savings per building (Nuuka AI):</strong>
+                        <p>€34,000 × 15% = €5,100</p>
+                    </div>
+                    <div class="calc-item">
+                        <strong>Total Addressable Market (TAM):</strong>
+                        <p>120,000 buildings × €5,100/building (potential savings) = €612,000,000 per year in potential savings</p>
+                        <p>If Nuuka charges a percentage of these savings (e.g., 50%), then the TAM for Nuuka's revenue would be approximately €306 Million annually.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="calc-section">
+                <h3>B. Serviceable Addressable Market (SAM)</h3>
+                <p>The portion of the TAM that Nuuka AI can realistically serve, considering its specific product (AI for existing BMS HVAC) and business model (zero CAPEX, subscription).</p>
+
+                <div class="calc-details">
+                    <div class="calc-item">
+                        <strong>SAM Filters:</strong>
+                        <ul>
+                            <li>Buildings must have an existing Building Management System (BMS)</li>
+                            <li>Significant HVAC energy consumption (typically larger commercial/public buildings)</li>
+                            <li>Willingness to adopt a SaaS model for energy efficiency</li>
+                        </ul>
+                    </div>
+                    <div class="calc-item">
+                        <strong>Prevalence of BMS:</strong>
+                        <p>While precise data for Spain on BMS penetration in existing buildings is not readily available, new constructions frequently integrate BMS. Given Spain's significant number of older buildings, a conservative estimate for buildings with a suitable existing BMS for Nuuka AI integration might be 15-25%. We'll use 20%.</p>
+                    </div>
+                    <div class="calc-item">
+                        <strong>Number of SAM Buildings:</strong>
+                        <p>120,000 buildings (TAM) × 20% = 24,000 buildings</p>
+                    </div>
+                    <div class="calc-item">
+                        <strong>Serviceable Addressable Market (SAM):</strong>
+                        <p>24,000 buildings × €5,100/building (potential savings) = €122,400,000 per year in potential savings</p>
+                        <p>Nuuka AI's revenue SAM (assuming 50% of savings): €61.2 Million annually.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="calc-section">
+                <h3>C. Serviceable Obtainable Market (SOM)</h3>
+                <p>The realistic market share Nuuka AI can capture within SAM over a specific timeframe (e.g., 3-5 years), considering competitive landscape, resources, and marketing effectiveness.</p>
+
+                <div class="calc-details">
+                    <div class="calc-item">
+                        <strong>SOM Factors:</strong>
+                        <ul>
+                            <li>Nuuka's zero-CAPEX model and guaranteed savings provide a strong competitive advantage</li>
+                            <li>Competition from global BMS providers and other energy management software</li>
+                            <li>Need for local sales presence, partnerships for implementation, and market education</li>
+                            <li>Pace of adoption for new AI technologies in the Spanish building sector</li>
+                        </ul>
+                    </div>
+                    <div class="calc-item">
+                        <strong>Market Capture Rate (Estimate):</strong>
+                        <p>Given Nuuka's strong USP but the need to establish a footprint, a realistic market capture rate within the SAM over 3-5 years could be 0.5-1.5%. We'll use 1%. This is a conservative estimate to account for market entry challenges despite the strong USP.</p>
+                    </div>
+                    <div class="calc-item">
+                        <strong>Number of SOM Buildings:</strong>
+                        <p>24,000 buildings (SAM) × 1% = 240 buildings</p>
+                    </div>
+                    <div class="calc-item">
+                        <strong>Serviceable Obtainable Market (SOM):</strong>
+                        <p>240 buildings × €5,100/building (potential savings) = €1,224,000 per year in potential savings</p>
+                        <p>Nuuka AI's revenue SOM (assuming 50% of savings): €612,000 annually within 3-5 years.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- TAM Modal -->
     <div id="tamModal" class="modal">
         <div class="modal-content">
