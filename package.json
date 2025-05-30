@@ -15,5 +15,11 @@
     "postcss": "^8.4.35",
     "tailwindcss": "^3.4.1",
     "serve": "^14.2.0"
+  },
+  "vercel": {
+    "build": {
+      "command": "npm run vercel-build",
+      "outputDirectory": "dist"
+    }
   }
 }
